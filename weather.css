@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body{
-    /* background-color: rgb(127, 193, 255); */
-    background-color: rgba(53, 53, 141, 0.839);
+    background: linear-gradient(100deg, #72EDF2 10%, #5151E5);
+    font-family: 'Montserrat', sans-serif;
 }
 .all{
     align-items: center;
@@ -16,18 +18,16 @@ body{
     flex-direction: column;
 }
 .weather{
-    border: 1px solid;
-    background-color: rgba(107, 107, 147, 0.358);
     box-sizing: border-box;
-    box-shadow: 1px 5px 5px rgba(5, 5, 192, 0.914);
+    background-color: transparent;
     transition: all 0.3s ease-out;
-    padding: 1rem 1rem 1rem 1rem;
+    padding: 1.5rem 1rem 1.5rem 1rem;
+    border-radius: 15px;
     width: 50%;
 }
 .weather h1{
     color: white;
 }
-/* rgb(6, 132, 249); */
 
 .weather input{
     border: none;
@@ -35,15 +35,15 @@ body{
     font-size: 1rem;
     padding-left:1rem ;
     margin-top: 2rem;
-    background-color:rgba(107, 107, 147, 0.358);
+    background-color:transparent;
     padding: 0.3rem 1rem 0.3rem 1rem;
     color: white;
+    width: 300px;
+    height: 40px;
+    font-family: 'Montserrat', sans-serif;
 }
 .weather input:focus{
     outline: none;
-}
-.weather input::placeholder{
-   color:white;
 }
 .weather button{
     background-color: navy;
@@ -52,14 +52,42 @@ body{
     padding: 0.5rem;
     font-size: 1rem;
     border-radius: 8px;
+    margin-left: 0.8rem;
     cursor: pointer;
+    height: 40px;
+    font-family: 'Montserrat', sans-serif;
+}
+.weather input:hover {
+    transition: 350ms;
+    transform: scale(1.1);
+}
+.weather button:hover{
+    box-shadow: inset 300px 0px 0px 0px #5151E5;
+    transition: 350ms;
+    transform: scale(1.1);
 }
 .result{
-    margin-top: 1rem;
+    /* box-shadow: 1px 1px 5px #5151E5 ; */
+    margin-top: 2rem;
+    padding: 3rem;
+    color: black;
+    text-align: start;
+    transition: all 0.3s ease-out;
+    border-radius: 8px;
+    background-color: white;
 }
 .result span {
-    font-size: 3rem;
-    color: white;
+    font-size: 3rem; 
+}
+.latlon{
+    display: flex;
+}
+.lat{
+    margin-left: auto;
+}
+.comment{
+    text-transform: uppercase;
+    
 }
 
 @media screen and (max-width: 500px) {

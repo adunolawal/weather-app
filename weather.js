@@ -7,11 +7,17 @@ let cityName = document.getElementById("cityName");
 let comment = document.getElementById("comment");
 let lat = document.getElementById("lat")
 let lon = document.getElementById("lon")
-
+let result = document.querySelector(".result")
 
 let city;
 
 searchBtn.addEventListener("click", (e) => {
+    if (result.style.display === "none"){
+        result.style.display = "block";
+    }
+    else {
+        result.style.display = "block"
+    }
     e.preventDefault()
     city = nameOfCity.value 
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5d18828185d71c238c11c35c2d12b7eb&units=metric`)
@@ -29,7 +35,6 @@ searchBtn.addEventListener("click", (e) => {
 
         if(comment.textContent == "light rain"){
             icon.innerHTML = `<img src="images/lightRain.png"> `
-            console.log('hi')
         }
         else if(comment.textContent == "overcast clouds" ||comment.textContent == "clear sky" ){
             icon.innerHTML = `<img src="images/sun3.png"> `

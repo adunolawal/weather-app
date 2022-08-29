@@ -80,15 +80,8 @@ body{
 .result span {
     font-size: 3rem; 
 }
-.latlon{
-    display: flex;
-}
-.lat{
-    margin-left: auto;
-}
 .comment{
     text-transform: uppercase;
-    
 }
 
 @media screen and (max-width: 500px) {
@@ -104,5 +97,4 @@ body{
     .weather h1{
         font-size: 1.5rem;
     }
-
 }

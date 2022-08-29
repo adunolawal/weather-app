@@ -1,14 +1,10 @@
-
 let nameOfCity = document.getElementById("nameOfCity");
 let searchBtn = document.getElementById("searchBtn");
 let display = document.getElementById("display");
 let icon = document.querySelector("#icon");
 let cityName = document.getElementById("cityName");
 let comment = document.getElementById("comment");
-let lat = document.getElementById("lat")
-let lon = document.getElementById("lon")
 let result = document.querySelector(".result")
-
 let city;
 
 searchBtn.addEventListener("click", (e) => {
@@ -20,6 +16,8 @@ searchBtn.addEventListener("click", (e) => {
     }
     e.preventDefault()
     city = nameOfCity.value 
+
+    // handles fetching of data
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5d18828185d71c238c11c35c2d12b7eb&units=metric`)
     .then(responseWeather => {
         return responseWeather.json();
@@ -27,11 +25,7 @@ searchBtn.addEventListener("click", (e) => {
     .then(respondClimate => {
         cityName.textContent = `${respondClimate.name}`
         display.textContent = `${respondClimate.main.temp}℃`
-        // icon.innerHTML =` <img src="http://openweathermap.org/img/w/${respondClimate.weather[0].icon}.png" width="80px"> `
         comment.textContent = `${respondClimate.weather[0].description}`
-        lat.textContent = `Lat  ${respondClimate.coord.lat}`
-        lon.textContent = `Lon  ${respondClimate.coord.lon}`
-        console.log(respondClimate.coord.lon);
 
         if(comment.textContent == "light rain"){
             icon.innerHTML = `<img src="images/lightRain.png"> `
@@ -58,7 +52,5 @@ searchBtn.addEventListener("click", (e) => {
             icon.innerHTML = `<img src="images/rainy.png" width="200px" > `
         }
     })
-
-
 })
 
